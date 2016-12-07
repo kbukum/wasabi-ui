@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDirs": ["../site", "../src"],
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "allowJs": true,
     "jsx": "react",
     "sourceMap": true,
@@ -16,7 +16,7 @@
     "../src"
   ],
   "filesGlob": [
-    "typings/**/*.d.ts"
+    "../typings/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",

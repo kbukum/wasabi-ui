@@ -34,7 +34,7 @@ export class DataFormModal  extends BaseComponent<DataFormModalProp, DataFormMod
             show: props.show
         }
     }
-    doRender() {
+    render() {
         return (
             <Modal show={this.state.show} onHide={this.onHide}>
                 <Modal.Header>

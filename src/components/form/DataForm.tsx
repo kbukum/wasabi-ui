@@ -14,7 +14,7 @@ export class DataForm  extends BaseComponent<DataFormProp, {}> {
     static defaultProps = {
         header: null
     };
-    doRender() {
+    render() {
         let form = (
             <Form>
                 {this.renderElements(this.props.fields)}

@@ -38,7 +38,7 @@ export class DataList extends BaseComponent<DataListProp, DataListState> {
     }
 
 
-    doRender(){
+    render(){
         let table = (
             <Table striped bordered condensed hover responsive>
                 {this.renderHeader(this.props.fields)}

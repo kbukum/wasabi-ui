@@ -10,7 +10,7 @@ class DataTableFormModal extends BaseComponent<DataTableFormModalProp, {}> {
         show: false
     };
 
-    doRender(){
+    render(){
         return null;
     }
 }

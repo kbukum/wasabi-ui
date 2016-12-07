@@ -55,7 +55,7 @@ export class DataGrid extends BaseComponent<DataGridProp, {}> {
     }
 
 
-    doRender(){
+    render(){
         let table = (
             <DataList
                 fields={this.fields}

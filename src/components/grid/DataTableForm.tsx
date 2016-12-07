@@ -6,7 +6,7 @@ export interface DataTableFormProp {
 }
 
 class DataTableForm extends BaseComponent<DataTableFormProp, {}> {
-    doRender(){
+    render(){
         return null;
     }
 }

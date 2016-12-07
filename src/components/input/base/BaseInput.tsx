@@ -21,7 +21,7 @@ export abstract class BaseInput<P extends BaseInputProp>  extends InputComponent
         super.componentWillReceiveProps(props);
     }
 
-    doRender(){
+    render(){
         return (
             <FormGroup>
                 <ControlLabel>{this.props.label}</ControlLabel>

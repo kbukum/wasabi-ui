@@ -19,7 +19,7 @@ export default class DataListItem extends BaseComponent<DataListItemProp, DataLi
         ClassInstance.bindAll(this);
     }
 
-    doRender(){
+    render(){
         let elements = [];
         let field;
         let fields = this.props.fields;

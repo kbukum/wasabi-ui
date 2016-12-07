@@ -107,7 +107,7 @@ export class Components extends BaseComponent<{}, ComponentsState>  {
             show: false
         }
     }
-    doRender() {
+    render() {
         return (
             <Panel header="Form Input Components">
                 <Input.DateInput

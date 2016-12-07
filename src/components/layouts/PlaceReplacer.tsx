@@ -14,7 +14,7 @@ export default class PlaceReplacer extends BaseComponent<PlaceReplacerProp, {}> 
         ClassInstance.bindAll(this);
     }
 
-    doRender(){
+    render(){
         return null;
     }
 

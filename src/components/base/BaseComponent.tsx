@@ -1,51 +1,53 @@
 import * as React from "react";
+import * as shallowCompare from "react-addons-shallow-compare";
+import Objects from "../../utils/Objects";
 import { ClassInstance } from "../../class"
+
 /**
  * Base component which wraps render function in a try catch structure
  * Any child components who extends from this component will get protection when
  * Exception thrown, so protect component life cycle.
  */
-abstract class BaseComponent<P, S> extends React.Component<P, S> {
-    constructor(props) {
+class BaseComponent<P, S> extends React.Component<P, S> {
+
+    /**
+     * Creates an instance of BaseComponent.
+     * @param {Object} props
+     */
+    constructor(props: Object) {
         super(props);
         ClassInstance.bindAll(this);
-
-    }
-    render(): React.ReactElement<{}> {
-        let result: React.ReactElement<{}>;
-        try {
-            result = this.doRender();
-        } catch (error) {
-            this.logError(error);
-            result = null;
-        }
-
-        return result;
     }
 
     /**
-     * Abstract method to be overriden by child component which will do real
-     * render work as usual react component
+     * Renders component with its children tags.
+     * @returns {string}
      */
-    abstract doRender(): React.ReactElement<{}>;
+    render(): any {
+        return this.props.children;
+    }
 
     /**
-     * API to log exception
+     * Returns class name of the component.
+     * @return {string} name.
      */
-    logError(error: Error): void {
-        /* tslint:disable */
-        const componentName: string = (this as any)._reactInternalInstance._currentElement.type.name;
-        const componentDetail: string = (this as any)._reactInternalInstance._currentElement.type.toString();
-        let propsString = "";
-        for (let propName in this.props) {
-            propsString += " " + propName;
-        }
-        /* tslint:enable */
+    getName (): string {
+        return this.constructor.name;
+    }
 
-        console.error(error, {Component: componentName, ComponentDetail: componentDetail, PropList: propsString});
-        console.error("A component (" + componentName + ") had an error during render. " +
-            "Please fix this immediately, even if you don't own this component. " +
-            "This message is designed to be annoying so that the problem is addressed.");
+    cloneState(): Object {
+        return Objects.clone(this.state);
+    }
+
+    /**
+     * Decides ant update is necessary for re-rendering.
+     * Compares old props and state objects with the newer ones without going deep.
+     * @param {Object} nextProps
+     * @param {Object} nextState
+     * @returns {boolean} "true" component shoud update ,"false" otherwise.
+     */
+    shouldComponentUpdate(nextProps: Object, nextState: Object): boolean {
+        return shallowCompare(this, nextProps, nextState);
     }
 }
 

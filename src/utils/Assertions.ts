@@ -165,7 +165,7 @@ class Assertions {
      * @param {boolean} error
      * @returns {boolean}
      */
-    isReactComponent(instance: Object, error: boolean): boolean {
+    isReactComponent(instance: any, error: boolean): boolean {
         /* disable-eslint no-underscore-dangle */
         if (!(instance && instance["$$typeof"])) {
             if (error) {

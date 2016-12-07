@@ -36,9 +36,10 @@ export class DataTable extends BaseComponent<DataTableProp, {}> {
         this.mergeFields(this.props.fields, this.props.propsOfFields);
     }
 
-    doRender() {
+    render() {
         let nodes: Array<any> = ReactUtil.getChildrenAsArray(this.props.children);
 
+        /*
         for(let i = 0 ; i < nodes.length; i++) {
             let node = nodes[i];
             if(node.type.name) {
@@ -56,6 +57,7 @@ export class DataTable extends BaseComponent<DataTableProp, {}> {
             }
 
         }
+        */
         return  (
             <Panel header={this.props.header} >
                 {nodes}

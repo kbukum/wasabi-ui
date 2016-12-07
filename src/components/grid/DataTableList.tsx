@@ -6,7 +6,7 @@ interface DataTableListProp {
 }
 
 class DataTableList extends BaseComponent<DataTableListProp, {}> {
-    doRender(){
+    render(){
         return null;
     }
 }

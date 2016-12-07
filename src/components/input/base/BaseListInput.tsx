@@ -27,7 +27,7 @@ export abstract class BaseListInput<P extends BaseListInputProp, V>  extends Inp
         value: []
     };
 
-    doRender(){
+    render(){
         let props: any = MapsClone.removeAll(this.props, ["label", "value","items", "onChange","valueField","textField"]);
         return (
             <FormGroup>
