@@ -1,0 +1,54 @@
+{
+  "name": "wasabi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:bundle": "webpack --config config/config.build.webpack.js",
+    "build:lib": "tsc --project ./config/config.build.ts.json",
+    "build": "npm run build:bundle & npm run build:lib",
+    "start": "webpack-dev-server --config config/config.dev.webpack.js --colors",
+    "test": "jest",
+    "docs": "typedoc --out ./docs ./src"
+  },
+  "devDependencies": {
+    "@types/react-bootstrap": "0.0.37",
+    "app-root-path": "^2.0.1",
+    "copy-webpack-plugin": "^3.0.1",
+    "jest": "^17.0.3",
+    "jest-webpack-alias": "^3.3.3",
+    "react-addons-test-utils": "^15.4.1",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^1.3.0",
+    "typedoc": "^0.5.1",
+    "typescript": "2.2.0-dev.20161206",
+    "typings": "^2.0.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-file-changer": "^1.0.0",
+    "webpack-notifier": "^1.4.1"
+  },
+  "dependencies": {
+    "@types/react": "^0.14.53",
+    "@types/react-dom": "^0.14.19",
+    "bootstrap": "^3.3.7",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/config/config.test.jest.preprocessor.js"
+    },
+    "testRegex": "/src/.*\\.spec\\.(ts|tsx|js)$"
+  }
+}
