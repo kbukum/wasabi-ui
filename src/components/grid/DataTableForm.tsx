@@ -1,11 +1,11 @@
 import * as React from "react";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 
 export interface DataTableFormProp {
 
 }
 
-class DataTableForm extends BaseComponent<DataTableFormProp, {}> {
+class DataTableForm extends Component<DataTableFormProp, {}> {
     render(){
         return null;
     }

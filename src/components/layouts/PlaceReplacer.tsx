@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ClassInstance } from "../../class";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 
 
 export interface PlaceReplacerProp {
@@ -8,7 +8,7 @@ export interface PlaceReplacerProp {
 
 }
 
-export default class PlaceReplacer extends BaseComponent<PlaceReplacerProp, {}> {
+export default class PlaceReplacer extends Component<PlaceReplacerProp, {}> {
     constructor(props) {
         super(props);
         ClassInstance.bindAll(this);

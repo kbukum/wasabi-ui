@@ -1,9 +1,9 @@
 import * as React from "react";
 import { FormGroup, ControlLabel, FormControl } from "react-bootstrap";
-import MapsClone from "../../utils/MapsClone";
-import { BaseListInput, BaseListInputProp } from "./base/BaseListInput";
+import MapsClone from "../../../utils/MapsClone";
+import { BaseListInput, BaseListInputProp } from "./BaseListInput";
 
-export interface ListSelectInputProp extends BaseListInputProp {
+export interface SelectInputProp extends BaseListInputProp {
     type?: string,
     value?: Array<any>,
     multiple? : boolean
@@ -13,7 +13,7 @@ const selected = {
     selected: "selected"
 };
 
-export default class ListSelectInput extends BaseListInput<ListSelectInputProp, Array<any>> {
+export default class SelectInput extends BaseListInput<SelectInputProp, Array<any>> {
     static defaultProps = {
         multiple: true,
         type: "select",

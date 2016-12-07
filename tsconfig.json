@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    "baseUrl": "./src",
+    "rootDirs": ["./src"],
     "outDir": "./lib",
     "module": "commonjs",
-    "target": "es5",
+    "target": "es6",
     "allowJs": true,
     "jsx": "react",
     "sourceMap": true,
@@ -14,14 +15,14 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "src"
+    "./src"
   ],
   "filesGlob": [
     "typings/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "../**/*.spec.ts",
+    "../**/*.spec.tsx"
   ]
 }

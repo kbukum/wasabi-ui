@@ -2,7 +2,7 @@ import * as React from "react";
 import { Panel, Table, ButtonToolbar, ButtonGroup, Button, Glyphicon } from "react-bootstrap";
 import { ClassInstance } from "../../class";
 import Maps from "../../utils/Maps";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 import { DataList, DataListProp } from "./DataList";
 import { DataFormModal } from "../form/DataFormModal";
 import { LayoutPosition } from "../../enum/Position";
@@ -23,7 +23,7 @@ export interface DataGridProp {
     }
 }
 
-export class DataGrid extends BaseComponent<DataGridProp, {}> {
+export class DataGrid extends Component<DataGridProp, {}> {
     static defaultProps = {
         header: null,
         formHeader: null,

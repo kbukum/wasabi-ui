@@ -1,5 +1,5 @@
 import * as React from "react";
-import { InputComponent, InputProp } from "../components/input/base/InputComponent";
+import { InputComponent, InputProp } from "../components/input/InputComponent";
 import Assertions from "../utils/Assertions";
 import Class from "../class/Class";
 import * as Input from "../components/input";
@@ -16,9 +16,9 @@ class ComponentManager extends Class {
         date: "DateInput",
         decimal: "DecimalInput",
         file: "FileInput",
-        check: "ListCheckInput",
-        radio: "ListRadioInput",
-        select: "ListSelectInput",
+        check: "CheckInput",
+        radio: "RadioInput",
+        select: "SelectInput",
         money: "MoneyInput",
         number: "NumericInput",
         password: "PasswordInput",

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BaseInput, BaseInputProp}from "./base/BaseInput"
+import { BaseInput, BaseInputProp}from "./BaseInput"
 
 export interface TextInputProp extends BaseInputProp {
     value?: string

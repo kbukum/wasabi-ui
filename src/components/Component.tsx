@@ -1,14 +1,14 @@
 import * as React from "react";
 import * as shallowCompare from "react-addons-shallow-compare";
-import Objects from "../../utils/Objects";
-import { ClassInstance } from "../../class"
+import Objects from "../utils/Objects";
+import { ClassInstance } from "../class"
 
 /**
  * Base component which wraps render function in a try catch structure
  * Any child components who extends from this component will get protection when
  * Exception thrown, so protect component life cycle.
  */
-class BaseComponent<P, S> extends React.Component<P, S> {
+class Component<P, S> extends React.Component<P, S> {
 
     /**
      * Creates an instance of BaseComponent.
@@ -51,4 +51,4 @@ class BaseComponent<P, S> extends React.Component<P, S> {
     }
 }
 
-export default BaseComponent;
+export default Component;

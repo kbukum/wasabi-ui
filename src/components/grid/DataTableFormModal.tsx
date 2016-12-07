@@ -1,11 +1,11 @@
 import * as React from "react";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 
 export interface DataTableFormModalProp {
     show?: boolean
 }
 
-class DataTableFormModal extends BaseComponent<DataTableFormModalProp, {}> {
+class DataTableFormModal extends Component<DataTableFormModalProp, {}> {
     static defaultProps = {
         show: false
     };

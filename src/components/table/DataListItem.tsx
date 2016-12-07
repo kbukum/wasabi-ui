@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ClassInstance } from "../../class";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 
 
 export interface DataListItemProp {
@@ -13,7 +13,7 @@ export interface DataListItemState {
     value?: any,
 }
 
-export default class DataListItem extends BaseComponent<DataListItemProp, DataListItemState> {
+export default class DataListItem extends Component<DataListItemProp, DataListItemState> {
     constructor(props) {
         super(props);
         ClassInstance.bindAll(this);

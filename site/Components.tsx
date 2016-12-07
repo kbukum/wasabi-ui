@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Input from "wasabi-ui/components/input";
 import { Panel, Button } from "react-bootstrap";
-import BaseComponent from "wasabi-ui/components/base/BaseComponent";
+import Component from "wasabi-ui/components/Component";
 import DataForm from "wasabi-ui/components/form/DataForm";
 import DataFormModal from "wasabi-ui/components/form/DataFormModal";
 import DataList from "wasabi-ui/components/table/DataList";
@@ -100,7 +100,7 @@ let items = [
 export interface ComponentsState {
     show: boolean
 }
-export class Components extends BaseComponent<{}, ComponentsState>  {
+export class Components extends Component<{}, ComponentsState>  {
     constructor(props) {
         super(props);
         this.state = {
@@ -120,19 +120,19 @@ export class Components extends BaseComponent<{}, ComponentsState>  {
                     label="DecimalInput"
                     value={0.0}
                 />
-                <Input.ListCheckInput
+                <Input.CheckInput
                     name="kamil"
                     label="CheckInput"
                     items={[ "element","element2"]}
                     value={["element2"]}
                 />
-                <Input.ListRadioInput
+                <Input.RadioInput
                     name="kamil"
                     label="RadioInput"
                     items={[ "element","element2"]}
                     value={"element2"}
                 />
-                <Input.ListSelectInput
+                <Input.SelectInput
                     multiple={true}
                     label="SelectInput"
                     name="kamil"

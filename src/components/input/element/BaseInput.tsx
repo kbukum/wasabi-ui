@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FormGroup, ControlLabel, FormControl } from "react-bootstrap";
-import { InputComponent , InputProp } from "./InputComponent";
+import { InputComponent , InputProp } from "../InputComponent";
 import MapsClone from "../../../utils/MapsClone";
 
 export interface BaseInputProp extends InputProp {

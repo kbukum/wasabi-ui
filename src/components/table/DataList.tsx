@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Panel, Table } from "react-bootstrap";
 import { ClassInstance } from "../../class";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 import DataListItem from "./DataListItem";
 
 export interface DataListProp {
@@ -18,7 +18,7 @@ export interface DataListState {
     value?: any,
 }
 
-export class DataList extends BaseComponent<DataListProp, DataListState> {
+export class DataList extends Component<DataListProp, DataListState> {
     static defaultProps = {
         header: null,
         fields: [],

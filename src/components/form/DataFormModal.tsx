@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Modal, Button } from "react-bootstrap";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 import { DataForm , DataFormProp } from "./DataForm";
 import ComponentManager from "../../manager/ComponentManager";
 
@@ -18,7 +18,7 @@ export interface  DataFormModalState {
     show: boolean
 }
 
-export class DataFormModal  extends BaseComponent<DataFormModalProp, DataFormModalState> {
+export class DataFormModal  extends Component<DataFormModalProp, DataFormModalState> {
     static defaultProps = {
         header: null,
         show: false

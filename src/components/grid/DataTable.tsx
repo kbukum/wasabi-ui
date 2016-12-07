@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Panel } from "react-bootstrap";
-import BaseComponent from "../base/BaseComponent";
+import Component from "../Component";
 import ReactUtil from "../../utils/ReactUtil";
 import Maps from "../../utils/Maps";
 import DataForm from "../form/DataForm";
@@ -19,7 +19,7 @@ export interface DataTableProp{
     items?: Array<any>
 }
 
-export class DataTable extends BaseComponent<DataTableProp, {}> {
+export class DataTable extends Component<DataTableProp, {}> {
     static defaultProps = {
         header: null,
         fields: [],

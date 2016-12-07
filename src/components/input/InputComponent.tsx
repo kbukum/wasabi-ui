@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ClassInstance } from "../../../class";
-import BaseComponent from "../../base/BaseComponent";
+import { ClassInstance } from "../../class";
+import Component from "../Component";
 
 export interface InputProp {
     name: string,
@@ -11,7 +11,7 @@ export interface InputProp {
 export interface InputState {
     value?: any,
 }
-export abstract class InputComponent<P extends InputProp>  extends BaseComponent<P, InputState>{
+export abstract class InputComponent<P extends InputProp>  extends Component<P, InputState>{
     constructor(props) {
         super(props);
         ClassInstance.bindAll(this);

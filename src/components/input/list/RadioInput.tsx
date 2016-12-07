@@ -1,9 +1,9 @@
 import * as React from "react";
 import { FormGroup, ControlLabel, FormControl, Radio } from "react-bootstrap";
-import MapsClone from "../../utils/MapsClone";
-import { BaseListInput, BaseListInputProp } from "./base/BaseListInput";
+import MapsClone from "../../../utils/MapsClone";
+import { BaseListInput, BaseListInputProp } from "./BaseListInput";
 
-export interface ListRadioInputProp extends BaseListInputProp {
+export interface RadioInputProp extends BaseListInputProp {
     type?: string,
     value?: string,
 }
@@ -12,7 +12,7 @@ const checked = {
     checked: true
 };
 
-export default class ListRadioInput extends BaseListInput<ListRadioInputProp, Array<any>> {
+export default class RadioInput extends BaseListInput<RadioInputProp, Array<any>> {
     static defaultProps = {
         type: "radio",
         valueField: "value",

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Form, Panel } from "react-bootstrap";
 import Maps from "../../utils/Maps";
-import { InputComponent, InputProp } from "../input/base/InputComponent";
-import BaseComponent from "../base/BaseComponent";
+import { InputComponent, InputProp } from "../input/InputComponent";
+import Component from "../Component";
 import ComponentManager from "../../manager/ComponentManager";
 
 export interface DataFormProp {
@@ -10,7 +10,7 @@ export interface DataFormProp {
     fields: Array<any>
 }
 
-export class DataForm  extends BaseComponent<DataFormProp, {}> {
+export class DataForm  extends Component<DataFormProp, {}> {
     static defaultProps = {
         header: null
     };

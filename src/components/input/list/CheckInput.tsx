@@ -1,9 +1,9 @@
 import * as React from "react";
 import { FormGroup, ControlLabel, FormControl, Checkbox } from "react-bootstrap";
-import MapsClone from "../../utils/MapsClone";
-import { BaseListInput, BaseListInputProp } from "./base/BaseListInput";
+import MapsClone from "../../../utils/MapsClone";
+import { BaseListInput, BaseListInputProp } from "./BaseListInput";
 
-export interface ListCheckInputProp extends BaseListInputProp {
+export interface CheckInputProp extends BaseListInputProp {
     type?: string,
     value?: Array<any>,
 }
@@ -12,7 +12,7 @@ const checked = {
     checked: true
 };
 
-export default class ListCheckInput extends BaseListInput<ListCheckInputProp, Array<any>> {
+export default class CheckInput extends BaseListInput<CheckInputProp, Array<any>> {
     static defaultProps = {
         type: "checkbox",
         valueField: "value",
