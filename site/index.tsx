@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import ShowCase from "./ShowCase";
 
-import { Components } from "./Components";
+const container = document.getElementById("app");
 
 ReactDOM.render(
-    <Components />,
-    document.getElementById("example")
+    <ShowCase />,
+    container
 );

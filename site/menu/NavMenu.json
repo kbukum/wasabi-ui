@@ -1,0 +1,36 @@
+{
+  "brand": {
+    "link": "#",
+    "text": "Wasabi UI"
+  },
+  "search": {
+    "placeHolder": "Search",
+    "direction": "right",
+    "actionName": "Ara"
+  },
+  "leftItems": [
+    {
+      "title": "Documents",
+      "items": [
+        {
+          "link": "#",
+          "text": "JSDoc"
+        }
+      ]
+    },
+    {
+      "link": "#",
+      "text": "Tutorial"
+    }
+  ],
+  "rightItems": [
+    {
+      "link": "#",
+      "text": "Contact"
+    },
+    {
+      "link": "#",
+      "text": "Hakkında"
+    }
+  ]
+}

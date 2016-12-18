@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "../src",
-    "rootDirs": ["../site", "../src"],
+    "baseUrl": "../wasabi-ui",
+    "rootDirs": ["../site", "../wasabi-ui"],
     "outDir": "../lib",
+    "target": "es5",
     "module": "commonjs",
-    "target": "es6",
     "allowJs": true,
     "jsx": "react",
     "sourceMap": true,
@@ -15,7 +15,8 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "../src"
+    "../wasabi-ui",
+    "*\\.scss"
   ],
   "filesGlob": [
     "typings/**/*.d.ts"

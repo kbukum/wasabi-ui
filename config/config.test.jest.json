@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "SystemJS",
     "target": "es5",
     "allowJs": true,
     "jsx": "react",
-    "rootDir": "src",
+    "rootDir": "wasabi-ui",
     "sourceMap": true,
     "noImplicitAny": false
   },

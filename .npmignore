@@ -10,6 +10,7 @@ node_modules/
 bower_components/
 *.log
 
+.vscode/
 build/
 dist/
 ### JetBrains template

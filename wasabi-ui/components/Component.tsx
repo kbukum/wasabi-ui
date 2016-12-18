@@ -1,42 +1,50 @@
 import * as React from "react";
+import * as ReactDOM from "react-dom";
 import * as shallowCompare from "react-addons-shallow-compare";
-import Objects from "../utils/Objects";
-import { ClassInstance } from "../class"
+import { ClassInstance } from "../class/index";
+import Functions from "../util/Functions";
+
+let compare = (shallowCompare as any);
+if(compare.default) {
+    compare = compare.default;
+}
 
 /**
  * Base component which wraps render function in a try catch structure
  * Any child components who extends from this component will get protection when
  * Exception thrown, so protect component life cycle.
  */
-class Component<P, S> extends React.Component<P, S> {
 
+export default class Component <P, S> extends React.Component <P, S> {
+    /**
+     *
+     */
+    refs: {
+        [string: string]: any
+    };
     /**
      * Creates an instance of BaseComponent.
      * @param {Object} props
      */
-    constructor(props: Object) {
+    public constructor(props: any) {
         super(props);
         ClassInstance.bindAll(this);
     }
 
-    /**
-     * Renders component with its children tags.
-     * @returns {string}
-     */
-    render(): any {
-        return this.props.children;
+    public render(): any {
+         return this.props.children; 
     }
 
     /**
      * Returns class name of the component.
      * @return {string} name.
      */
-    getName (): string {
-        return this.constructor.name;
+    public getName (): string {
+        return Functions.getName(this.constructor);
     }
 
-    cloneState(): Object {
-        return Objects.clone(this.state);
+    public getNode(element: any): any {
+        return ReactDOM.findDOMNode(element);
     }
 
     /**
@@ -46,9 +54,8 @@ class Component<P, S> extends React.Component<P, S> {
      * @param {Object} nextState
      * @returns {boolean} "true" component shoud update ,"false" otherwise.
      */
-    shouldComponentUpdate(nextProps: Object, nextState: Object): boolean {
-        return shallowCompare(this, nextProps, nextState);
+    public shouldComponentUpdate(nextProps: Object, nextState: Object): boolean {
+        return compare(this, nextProps, nextState);
     }
 }
 
-export default Component;

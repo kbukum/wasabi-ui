@@ -6,9 +6,9 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 
 const paths = {
     site: path.resolve(Utility.projectDir, "site"),
-    app: path.resolve(Utility.projectDir, "src"),
+    app: path.resolve(Utility.projectDir, "wasabi-ui"),
     static: path.resolve(Utility.projectDir, "static")
-}
+};
 
 const webpackConfig = {
     entry: paths.site,
@@ -16,11 +16,13 @@ const webpackConfig = {
     devtool: "source-map",
     context: paths.site,
     resolve: {
+        root: [paths.site, paths.app],
         alias: {
-            "wasabi-ui": paths.app
+            "wasabi-ui/lib": paths.app,
+            "wasabi-ui": paths.app,
         },
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".json"]
     },
     ts: {
         configFileName: "/config/config.dev.ts.json"
@@ -28,9 +30,29 @@ const webpackConfig = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: 'ts-loader'},
+            {
+                /**
+                 * @link https://github.com/webpack/json-loader
+                 * npm install json-loader --save-dev
+                 */
+                test: /\.json$/,
+                loader: "json-loader"
+            },
+            {
+                test: /\.s?css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                /**
+                 * @link https://github.com/webpack/file-loader
+                 * npm install file-loader --save-dev
+                 */
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                loader: "file-loader",
+                include: /fonts/
+            }
         ],
-
         preLoaders: [
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { test: /\.js$/, loader: "source-map-loader" }
@@ -40,7 +62,8 @@ const webpackConfig = {
         new WebpackNotifierPlugin({ alwaysNotify: true }),
         new webpack.HotModuleReplacementPlugin(),
         new CopyWebpackPlugin([{
-                from: "../static"
+                from: "../static/index_dev.html",
+                to: "../index.html"
             },
             {
                 from: "../node_modules/bootstrap/dist",
