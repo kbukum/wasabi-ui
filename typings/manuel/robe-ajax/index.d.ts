@@ -887,7 +887,7 @@ interface JQueryStatic {
      * Effects
      */
 
-    easing: JQueryEasingFunctions;
+    easing: any;
 
     fx: {
         tick: () => void;

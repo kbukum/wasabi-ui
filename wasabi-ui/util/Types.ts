@@ -31,8 +31,46 @@ const TO_STRING = {
     File: "[object File]"
 };
 
+
+const returnSameFunction = <E> (o: E): E => {
+    return o;
+};
+
+const CLONE_FUNCTIONS = {
+    "[object Number]": (o: number): number => {
+        return Number(o);
+    },
+    "[object Boolean]": returnSameFunction,
+    "[object Array]": <T> (o: Array<T>): Array<T> => {
+        return o.slice(0);
+    },
+    "[object String]": (o: string): string => {
+        return String(o);
+    },
+    "[object Date]": (o: Date): Date => {
+        return new Date(o.getTime());
+    },
+    "[object RegExp]": (o: RegExp): RegExp => {
+        return new RegExp(o);
+    },
+    "[object Null]": returnSameFunction,
+    "[object Function]": returnSameFunction,
+    "[object Undefined]": returnSameFunction,
+    "[object FormData]": returnSameFunction,
+    "[object File]": returnSameFunction
+};
+
 export default class Types {
 
+    public static getTypeName(o: any): string {
+        let typeObjectString = toString.call(o);
+        let typeString = typeObjectString.substr(TYPE_PREFIX.length);
+        return typeString;
+    }
+
+    public static getCloneFunction(o: any): Function {
+        return CLONE_FUNCTIONS[toString.call(o)];
+    }
     /**
      *
      * @param element
@@ -132,5 +170,4 @@ export default class Types {
     public static isFile(element: File): boolean {
         return toString.call(element) === TO_STRING.File;
     }
-
 }

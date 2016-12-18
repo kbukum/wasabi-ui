@@ -2,6 +2,7 @@ const path = require("path");
 const Utility = require("./util/Utility");
 const webpack = require('webpack');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Server = require("./server/Server");
 var WebpackNotifierPlugin = require('webpack-notifier');
 
 const paths = {
@@ -9,6 +10,13 @@ const paths = {
     app: path.resolve(Utility.projectDir, "wasabi-ui"),
     static: path.resolve(Utility.projectDir, "static")
 };
+
+const server = new Server({
+    p: 3000,
+    r: "config/data/db.json"
+});
+
+server.listen();
 
 const webpackConfig = {
     entry: paths.site,

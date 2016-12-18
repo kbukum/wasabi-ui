@@ -1,5 +1,8 @@
 export  * from "./class";
 export  * from "./components";
+export  * from "./query";
+export  * from "./types";
+export  * from "./resource"
 export  * from "./util";
 
 declare let require: {

@@ -1,4 +1,6 @@
 {
+  "buildOnSave": false,
+  "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./wasabi-ui",
     "rootDirs": ["./wasabi-ui"],
@@ -7,10 +9,7 @@
     "paths": {
         "wasabi-ui/*" : "../wasabi-ui/*"
     },
-    "allowJs": true,
     "jsx": "react",
-    "sourceMap": true,
-    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,

@@ -71,12 +71,18 @@ export default class SearchBox extends InputComponent<SearchBoxProps, any> {
         this.setState(state);
     }
 
-    public onSelect(value){
-        let e = {
-            $self: this,
-            target: { value }
-        };
-        this.props.onSelect? this.props.onSelect(this, e): this.props.onChange(this, e);
+    public onSelect(item){
+        if(this.props.onSelect) {
+            this.props.onSelect(this, {
+                target: {
+                    value: item
+                }
+            });
+        } else {
+            this.props.onChange(this, {
+                target: { value: item[this.props.valueField]}
+            })
+        }
     }
 
     public renderElements(items: Array<any>){
