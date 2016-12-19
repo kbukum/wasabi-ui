@@ -77,6 +77,15 @@ export default class Types {
      * @return {boolean}
      * @public
      */
+    public static isObject(element: any): boolean {
+        return toString.call(element) === "[object Object]";
+    }
+    /**
+     *
+     * @param element
+     * @return {boolean}
+     * @public
+     */
     public static isNumber(element: any): boolean {
         return toString.call(element) === TO_STRING.Number;
     }

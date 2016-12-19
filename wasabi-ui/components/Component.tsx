@@ -15,7 +15,7 @@ if(compare.default) {
  * Exception thrown, so protect component life cycle.
  */
 
-export default class Component <P, S> extends React.Component <P, S> {
+abstract class Component <P, S> extends React.Component <P, S> {
     /**
      *
      */
@@ -58,4 +58,6 @@ export default class Component <P, S> extends React.Component <P, S> {
         return compare(this, nextProps, nextState);
     }
 }
+
+export default Component;
 

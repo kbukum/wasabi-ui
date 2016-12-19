@@ -59,7 +59,7 @@ export default class SearchBox extends InputComponent<SearchBoxProps, any> {
                     </ListGroupItem>
                     { this.renderElements(this.state.items) }
             </ButtonGroup>
-        )
+        );
     }
 
     public onChange(e){

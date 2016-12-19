@@ -1,9 +1,13 @@
 import Assertions from "./Assertions";
 import Types from "./Types";
+import Arrays, { ForEachCallback } from "./Arrays";
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const toString = Object.prototype.toString;
 
+export interface ObjectForEachCallback {
+    (item: Object, key: string, items: Object ): boolean | any;
+};
 
 /**
  * A singleton class which implements mostly used json object operations.
@@ -12,6 +16,49 @@ const toString = Object.prototype.toString;
  */
 class Objects {
 
+    /**
+     *
+     * @param element
+     * @return {boolean}
+     * @public
+     */
+    public static getLength(item: any) {
+        if(Types.isArray(item)) {
+            return item.length;
+        } else if(Types.isObject(item)) {
+            let i = 0;
+            for(let key in  item) {
+                if(hasOwnProperty.call(item, key)) {
+                   i++;
+                }
+            }
+            return i;
+        } else if(Types.isString(item)) {
+            return (<string>item).length;
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param element
+     * @return {boolean}
+     * @public
+     */
+    public static forEach(items: any, callback: (ForEachCallback | ObjectForEachCallback)) {
+        if(Types.isArray(items)) {
+            Arrays.forEach(items, <ForEachCallback>callback);
+        } else if(items) {
+            for(let key in  items) {
+                if(hasOwnProperty.call(items, key)) {
+                    let item = items[key];
+                    if((<ObjectForEachCallback>callback)(item, key, items) === false) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
