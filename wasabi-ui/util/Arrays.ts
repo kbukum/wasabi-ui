@@ -1,17 +1,22 @@
-
+/**
+ * callback method for loop in Array.
+ */
 export interface ForEachCallback {
     (item: any, index: Number, items: Array<any> ): boolean | any;
-};
+}
 
+/**
+ *
+ * Provides mostly used operations on Array.
+ */
 export default class Arrays {
 
     /**
-     *
-     * @param element
+     * @param items
+     * @param callback
      * @return {boolean}
-     * @public
      */
-    public static forEach(items: Array<any>, callback: ForEachCallback) {
+    public static forEach(items: Array<any>, callback: ForEachCallback): boolean {
         if(items) {
             for(let i = 0 ; i < items.length; i++) {
                 let item = items[i];
@@ -19,6 +24,8 @@ export default class Arrays {
                     break;
                 }
             }
+            return true;
         }
+        return false;
     }
 }

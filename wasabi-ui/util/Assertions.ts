@@ -2,10 +2,11 @@ import * as React from "react";
 import Functions from "./Functions";
 import Class from "../class/Class";
 const toString = Object.prototype.toString;
+
+
 /**
  * A singleton class which implements mostly used validation operations.
  */
-
 export class Assertions extends Class {
     private checkerObject = {};
     private urlPattern;
